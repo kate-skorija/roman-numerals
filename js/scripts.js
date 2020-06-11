@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  //Business Logic
+//Business Logic
 
-  // constructs integer into roman numberal notation
+// constructs integer into roman numberal notation array
   function arrayBuilder(int) {
     let array = []
     if (int === "9") {
-      array.push("1s", "10")
+      array.push("1", "10")
     } else if (int >= 5 && int < "9") {
       array.push("5")
       if (int - 5 === 3){
@@ -16,7 +16,7 @@ $(document).ready(function() {
         array.push("1")
       };
     } else if (int === "4"){
-      array.push("1s", "5")
+      array.push("1", "5")
     } else if (int < 4) {
       if (int === "3"){
         array.push("1", "1", "1")
@@ -29,11 +29,9 @@ $(document).ready(function() {
     return array;
   };
 
-  //converts integers into roman numeral value
+//converts array of integers into roman numeral values
   function converter(array){
-
     newArray =[];
-
     for (const element of array){
       if (element === "1000"){
         newArray.push("M");
@@ -47,47 +45,34 @@ $(document).ready(function() {
         newArray.push("X");
       } else if (element === "5"){
         newArray.push("V");
-      } else if (element === "1" || element === "1s"){
+      } else if (element === "1"){
         newArray.push("I");
       };
     };
     return newArray;
   };
 
-  // translates integer into roman numerals
+// translates integer into roman numerals
   function translator(int) {
     let onesArray = [];
     let tensArray = [];
     let hundredsArray = [];
     let thousandsArray = [];
-
     posCount = 0;
     for (i=int.length - 1; i >= 0; i--){
       if (posCount === 0) {
         onesArray = arrayBuilder(int[i]);
       } else if (posCount === 1) {
         for (const element of arrayBuilder(int[i])){
-          if (element === "1s") {
-            tensArray.push(element);
-          } else {
             tensArray.push(element + "0");
-          };
         };
       } else if (posCount === 2) {
         for (const element of arrayBuilder(int[i])){
-          if (element === "1s") {
-            hundredsArray.push(element);
-          } else {
             hundredsArray.push(element + "00");
-          };
         };
       } else if (posCount === 3) {
         for (const element of arrayBuilder(int[i])){
-          if (element === "1s") {
-            thousandsArray.push(element);
-          } else {
             thousandsArray.push(element + "000");
-          };
         };
       };
       posCount += 1
@@ -97,17 +82,16 @@ $(document).ready(function() {
     let hundredsArrayNew = converter(hundredsArray)
     let tensArrayNew = converter(tensArray)
     let onesArrayNew = converter(onesArray)
-
-    let output = (thousandsArrayNew.concat(hundredsArrayNew, tensArrayNew, onesArrayNew)).join("")
+    let output = (converter(thousandsArray).concat(converter(hundredsArray), converter(tensArray), converter(onesArray))).join("")
     return output
   };
 
-
   //User Interface
-
-  const input = $("#number").val()
-
-  $(".output").text(translator(input))
-
+  $("#numberForm").submit(function() {
+    event.preventDefault();
+    const input = $("#number").val();
+    const output = translator(input)
+    $("p.output").text(output);
+  });
 
 });
