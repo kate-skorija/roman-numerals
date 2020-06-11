@@ -1,12 +1,36 @@
 $(document).ready(function() {
 //Business Logic
 
+function intArray(int){
+	let arrayTemp = []
+  let intLength = (int - 5)
+	if (int === "9") {
+  	arrayTemp.push("1", "10")
+  } else if (int >= 5) {
+  	arrayTemp.push("5")
+  	for (i=0; intLength>0; intLength-1){
+    arrayTemp.push("1")
+    intLength -= 1
+    }
+  } else if (int === "4"){
+		arrayTemp.push("1", "5")   	
+  } else if (int < 4) {
+   	for (i=0; intLength>0; intLength-1){
+    arrayTemp.push("1")
+    intLength -= 1
+    };
+  };
+  return arrayTemp
+};
+
+console.log(intArray("3")) 
+
 // constructs integer into roman numberal notation array
   function arrayBuilder(int) {
     let array = []
     if (int === "9") {
       array.push("1", "10")
-    } else if (int >= 5 && int < "9") {
+    } else if (int >= 5 && int < 9) {
       array.push("5")
       if (int - 5 === 3){
         array.push("1", "1", "1")
@@ -77,11 +101,6 @@ $(document).ready(function() {
       };
       posCount += 1
     }; 
-    
-    let thousandsArrayNew = converter(thousandsArray)
-    let hundredsArrayNew = converter(hundredsArray)
-    let tensArrayNew = converter(tensArray)
-    let onesArrayNew = converter(onesArray)
     let output = (converter(thousandsArray).concat(converter(hundredsArray), converter(tensArray), converter(onesArray))).join("")
     return output
   };
@@ -93,5 +112,4 @@ $(document).ready(function() {
     const output = translator(input)
     $("p.output").text(output);
   });
-
 });
