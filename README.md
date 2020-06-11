@@ -13,13 +13,13 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| If a non-integer is entered, return an error | "325hello" | "enter a number between 1-3999" |
-| Entered numbers must be between 1-3999 | "4000" | "enter a number between 1-3999" |
 | An entered number is converted into it's corresponding symbol | "10" | "X" |
 | the entered number will equal the sum of all symbols | "60" | "LX" |
 | Symbols are displayed largest to smallest | "1111" | "MCXI" |
 | if the sum of all symbols requires more than 3 consecutive cases of the same symbol, use subtraction to reach the sum of consecutive values. | "4" | "IV" |
 | ones, tens, hundreds, and thousands need to evaulate separately. | "99" | "XCIX" (not: "IC") |
+| If a non-integer is entered, return an error | "325hello" | "enter a number between 1-3999" |
+| Entered numbers must be between 1-3999 | "4000" | "enter a number between 1-3999" |
 
 ## Setup/Installation Requirements
 
