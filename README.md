@@ -1,13 +1,12 @@
-#  _{title}_
+#  Roman Numerals Generator
 
-#### _{brief desc}_
-##### __Created:__ 5/29/2020
-##### __Last Updated:__ 6/3/2020 
-##### By _**Tyson Lackey**_  
+
+##### __Created:__ 6/11/2020 
+##### By _**Tyson Lackey**_, _**Kate Skorija**_, & _**Erich Richter**_ 
 
 ## Description
 
-_{detailed desc}_
+This website takes numbers as an input, and outputs the roman numeral equivalent. We used HTML, jQuery, and JavaScript.
 
 ## Behaviors
 
@@ -36,15 +35,11 @@ _{detailed desc}_
 
 1. Clone this repository onto your computer:
     "git clone {github repo URL}"
-2. Navigate into the "{project name}" directory in Visual Studio Code or preferred text editor:
+2. Navigate into the "roman-numerals" directory in Visual Studio Code or preferred text editor:
 3. Open the projec
     "code ."
 3. Open index.html in your browser:
     "open index.html"
-
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Directly in your Browser:
-
-* Navigate to {GH Pages URL} in your web browser.
 
 ## Known Bugs
 
@@ -52,8 +47,7 @@ _{detailed desc}_
 
 ## Support and contact details
 
-* Discord: TysonL#4409
-* Email: lackeyt90@gmail.com
+Please reach out to us through our GitHub accounts.
 
 
 ## Technologies Used
@@ -65,12 +59,9 @@ _{detailed desc}_
 * Javascript
 * JQuery
 
-## Resources:
-
-* 
 
 ### License
 
-Copyright (c) 2020 **_Tyson Lackey_**
+Copyright (c) 2020 **_Tyson Lackey_**, _**Kate Skorija**_, & _**Erich Richter**_ 
 
 This software is licensed under the MIT license.
